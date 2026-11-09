@@ -478,6 +478,8 @@ const DATA = {
       { titulo: "Inglês B2", logo: "logos/ingles.png", sigla: "EN", local: "em curso", periodo: "", aprendizados: ["Comunicação profissional em inglês.", "Leitura de documentação técnica e materiais de fabricantes.", "Conversação para reuniões e apresentações."] }
     ]
   },
+  /* Texto de boas-vindas logo abaixo do nome */
+  convite: "Conheça um pouco mais sobre mim por aqui: minha trajetória, o que faço hoje, os cases de que mais me orgulho e o que estou aprendendo no caminho.",
   resumo: "Responsável por prospecção, reativação de carteira e gestão de contas em uma integradora de soluções de infraestrutura de TI. Uso IA e automação para escalar o processo comercial: prospecção diária por ICP, montagem de propostas e registro no CRM.",
 
   metodo: [
@@ -619,9 +621,10 @@ document.getElementById("top").innerHTML = `
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span>${fmt(d.boasVindas)}</p>
       <h1 aria-label="${esc(d.nome)}"><span class="ln" style="--l:0" aria-hidden="true"><span>${fmt(nomeParts[0])}</span></span><span class="ln" style="--l:1" aria-hidden="true"><span>${fmt(nomeParts.slice(1).join(" "))}</span></span></h1>
       <p class="tagline">Vendas B2B. <span class="hl"><span class="grad">Com processo e IA.</span>${HL}</span></p>
-      <p class="lede">${fmt(d.resumo)}</p>
+      <p class="lede">${fmt(d.convite)}</p>
       <div class="ctas">
-        <a class="pill" href="#cases">Ver cases ${ARROW}</a>
+        <a class="pill" href="#sobre">Sobre mim ${ARROW}</a>
+        <a class="chev" href="#cases">Ver cases</a>
         ${isLink ? `<a class="chev" href="${esc(d.linkedin)}">LinkedIn</a>` : ""}
         <a class="chev" href="mackenzie/">MBA Mackenzie</a>
       </div>
