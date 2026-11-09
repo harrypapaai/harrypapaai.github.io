@@ -282,9 +282,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 .cv-col li.clickable{cursor:pointer;border-radius:14px;margin:0 -10px;padding-left:22px;padding-right:10px;transition:background .25s}
 .cv-col li.clickable:hover,.cv-col li.clickable:focus-visible{background:#f5f7fb}
 .cv-col li.clickable::before{left:-12px}
-.cv-col .more{font-size:13px!important;font-weight:600;color:#0066cc!important;opacity:0;transform:translateX(-4px);transition:opacity .25s,transform .25s}
-.cv-col li.clickable:hover .more,.cv-col li.clickable:focus-visible .more{opacity:1;transform:none}
-@media (hover:none){.cv-col .more{opacity:1;transform:none}}
+.cv-col .more{font-size:13px!important;font-weight:600;color:#0066cc!important;transition:transform .25s}
+.cv-col li.clickable:hover .more,.cv-col li.clickable:focus-visible .more{transform:translateX(3px)}
 .modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
 .modal.open{opacity:1;pointer-events:auto}
 .sheet{position:relative;width:min(560px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:26px;padding:30px 30px 28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);transform:translateY(16px) scale(.97);transition:transform .45s var(--spring)}
