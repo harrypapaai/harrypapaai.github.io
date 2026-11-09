@@ -52,6 +52,7 @@ nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-betw
 nav .brand{font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap}
 nav .back{font-size:13px;color:var(--ink);opacity:.8;white-space:nowrap}
 nav .back:hover{opacity:1;text-decoration:none}
+nav .progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));background:var(--grad);pointer-events:none}
 
 /* HERO */
 .hero{text-align:center;padding:72px 0 0;overflow:hidden}
@@ -75,7 +76,9 @@ nav .back:hover{opacity:1;text-decoration:none}
 .device .when{font-size:14px;color:var(--night-muted);text-align:right}
 .device .when b{display:block;color:var(--night-ink);font-size:17px;font-weight:600}
 .track{display:flex;gap:6px;margin-top:30px}
-.seg{position:relative;display:grid;gap:10px;min-width:0}
+.seg{position:relative;display:grid;gap:10px;min-width:0;color:inherit;border-radius:8px}
+.seg:hover{text-decoration:none}
+.seg:hover b{color:#2997ff}
 .seg .bar{height:10px;border-radius:6px;background:rgba(255,255,255,.12)}
 .seg.done .bar{background:#2997ff}
 .seg.now .bar{background:var(--grad);box-shadow:0 0 18px rgba(94,92,230,.55)}
@@ -94,10 +97,17 @@ section{padding:112px 0}
 .head .kicker{font-size:19px;font-weight:600;color:var(--muted);margin-bottom:8px}
 .head h2{font-size:clamp(34px,5.2vw,60px);line-height:1.06;letter-spacing:-.04em}
 .head p{font-size:21px;color:var(--muted);margin-top:16px;letter-spacing:.01em}
+.head .legend{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:14px;font-weight:600;letter-spacing:0}
+.legend span{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:980px;background:var(--white);color:var(--ink)}
+.legend .lg-ia{box-shadow:inset 0 0 0 1px rgba(94,92,230,.35)}
+.legend .lg-w{color:var(--link)}
+.legend .lg-w svg{width:16px;height:16px;color:#2997ff}
+.legend i{font-style:normal;color:#5e5ce6;font-weight:700}
+.legend .grp{display:inline-flex;align-items:center;gap:8px;font-style:normal}
 
 /* MÓDULOS */
 .mods{display:grid;gap:22px}
-.mod{position:relative;background:var(--white);border-radius:28px;padding:34px 36px 30px;box-shadow:0 30px 60px -40px rgba(0,0,0,.28);overflow:hidden}
+.mod{scroll-margin-top:64px;position:relative;background:var(--white);border-radius:28px;padding:34px 36px 30px;box-shadow:0 30px 60px -40px rgba(0,0,0,.28);overflow:hidden}
 .mod.now::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--grad)}
 .mod-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
 .mod-head h3{font-size:26px;letter-spacing:-.03em}
@@ -185,7 +195,7 @@ footer a{color:var(--muted);text-decoration:underline}
 </style>
 </head>
 <body>
-<nav aria-label="Navegação"><div class="wrap"><a class="brand" href="../" id="brand"></a><a class="back" href="../">‹ Voltar ao portfólio</a></div></nav>
+<nav aria-label="Navegação" id="nav"><div class="wrap"><a class="brand" href="../" id="brand"></a><a class="back" href="../">‹ Voltar ao portfólio</a></div><span class="progress" aria-hidden="true"></span></nav>
 <header class="hero" id="top"></header>
 <main id="app"></main>
 <footer><div class="wrap" id="foot"></div></footer>
@@ -288,7 +298,7 @@ document.getElementById("top").innerHTML = `
         <div><p>${fmt(d.curso)}</p><h2>${atual ? `Hoje no <span class="grad">${fmt(atual.nome)}</span>: ${fmt(atual.tema.toLowerCase())}.` : "Onde estou no curso."}</h2></div>
         <p class="when"><b>${fmt(d.periodo)}</b>${fmt(d.local)}</p>
       </div>
-      <div class="track" role="list" aria-label="Módulos do curso">${d.modulos.map(m => `<div class="seg ${st(m.status)}" role="listitem" style="flex:${Math.max(m.horas, 96)} 1 0"><div class="bar"></div><b>${fmt(m.nome)}</b><span>${fmt(m.tema)} · ${m.horas} h</span></div>`).join("")}</div>
+      <div class="track" role="group" aria-label="Módulos do curso">${d.modulos.map((m, i) => `<a class="seg ${st(m.status)}" href="#modulo-${i + 1}" style="flex:${Math.max(m.horas, 96)} 1 0"><div class="bar"></div><b>${fmt(m.nome)}</b><span>${fmt(m.tema)} · ${m.horas} h</span></a>`).join("")}</div>
       <div class="stats">
         <div><b>${totalH} h</b><span>de carga horária</span></div>
         <div><b>${d.modulos.length}</b><span>módulos</span></div>
@@ -314,9 +324,10 @@ const pairHTML = p => {
 document.getElementById("app").innerHTML = `
 <section class="paper" id="grade" aria-labelledby="h-grade">
   <div class="wrap">
-    <div class="head reveal"><p class="kicker">Como o curso é montado</p><h2 id="h-grade">Seis pares. <span class="grad">Gestão e IA lado a lado.</span></h2><p>Cada disciplina de gestão vem com uma de inteligência artificial aplicada ao mesmo tema. Ao lado de cada par, onde o assunto aparece no meu trabalho.</p></div>
-    <div class="mods">${d.modulos.map(m => { const s = st(m.status); return `
-      <article class="mod ${s} reveal" aria-labelledby="m-${esc(m.nome)}">
+    <div class="head reveal"><p class="kicker">Como o curso é montado</p><h2 id="h-grade">Seis pares.<br><span class="grad">Gestão e IA lado a lado.</span></h2><p>Cada disciplina de gestão vem com uma de inteligência artificial aplicada ao mesmo tema.</p>
+      <p class="legend" aria-label="Como ler cada par"><span class="lg-g">Gestão</span><i>+</i><span class="lg-ia">IA aplicada</span><em class="grp"><i>=</i><span class="lg-w">${ico.work}No meu trabalho</span></em></p></div>
+    <div class="mods">${d.modulos.map((m, mi) => { const s = st(m.status); return `
+      <article class="mod ${s} reveal" id="modulo-${mi + 1}" aria-labelledby="m-${esc(m.nome)}">
         <div class="mod-head"><h3 id="m-${esc(m.nome)}">${fmt(m.nome)} · ${fmt(m.tema)}</h3><span class="hrs">${m.horas} horas</span><span class="badge ${s}">${label[s]}</span></div>
         ${m.pares ? `<div class="pairs">${m.pares.map(pairHTML).join("")}</div>` : ""}
         ${m.final ? `<div class="final"><span class="ic">${ico.flag}</span><div><p>${fmt(m.final.texto)}</p>${filled(m.final.tema) ? `<p><b>Tema:</b> ${fmt(m.final.tema)}</p>` : ""}</div></div>` : ""}
@@ -334,6 +345,12 @@ document.getElementById("app").innerHTML = `
 </section>`;
 
 document.getElementById("foot").innerHTML = `<span><a href="../">${fmt(d.nome)}</a> · página pessoal, sem vínculo oficial com a ${fmt(d.instituicao)}.</span><span>Grade conforme a <a href="${esc(d.fonte)}">página oficial do curso</a>.</span>`;
+
+(() => {
+  const nav = document.getElementById("nav"); let ticking = false;
+  const upd = () => { const h = document.documentElement.scrollHeight - innerHeight; nav.style.setProperty("--p", h > 0 ? Math.min(1, scrollY / h) : 0); ticking = false; };
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+})();
 
 if (DRAFT) document.body.insertAdjacentHTML("beforeend", '<p class="draft-bar" role="status">Modo rascunho: campos a preencher visíveis</p>');
 </script>
