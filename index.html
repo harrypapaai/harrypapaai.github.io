@@ -294,6 +294,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 .sheet-head .lg img{width:100%;height:100%;object-fit:cover}
 .sheet-head h3{font-size:22px;letter-spacing:-.025em;line-height:1.2}
 .sheet-head p{color:var(--muted);font-size:15px;margin-top:2px}
+.sheet-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:2px 0 4px}
+.sheet-stats.n4{grid-template-columns:1fr 1fr}
+.sheet-stats div{display:grid;gap:5px;align-content:start;background:#f5f5f7;border-radius:16px;padding:14px 14px 13px}
+.sheet-stats b{font-size:28px;font-weight:700;letter-spacing:-.04em;line-height:1;justify-self:start;padding-right:.05em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sheet-stats span{font-size:12.5px;line-height:1.3;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.modal.open .sheet-stats div{animation:popin .55s var(--out) both}.modal.open .sheet-stats div:nth-child(2){animation-delay:.07s}.modal.open .sheet-stats div:nth-child(3){animation-delay:.14s}.modal.open .sheet-stats div:nth-child(4){animation-delay:.21s}}
 .sheet h4{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 10px}
 .sheet ul{margin:0;padding-left:20px;display:grid;gap:10px}
 .sheet li{font-size:16.5px;line-height:1.5}
@@ -430,7 +436,7 @@ const DATA = {
     texto: "Sou da área de tecnologia e escolhi a frente comercial. Cresci no comércio da família, passei por marketing, análise de negócios e implantação de ERP e CRM, e hoje uso essa bagagem técnica para vender infraestrutura de TI de forma consultiva: entender o problema do cliente antes de falar de produto.",
     /* logo: caminho da imagem, ex. "logos/senior.png" (arquivo na mesma pasta do index.html no GitHub). Vazio = iniciais. */
     trajetoria: [
-      { cargo: "Account Manager", logo: "logos/generalit.png", local: "General IT Solutions", periodo: "2026 – atual",
+      { cargo: "Account Manager", logo: "logos/generalit.png", numeros: [{ valor: "172", rotulo: "contas na carteira sob gestão" }, { valor: "69", rotulo: "contas novas qualificadas com IA" }, { valor: "78%", rotulo: "das contas P1 e P2 com 2 ou mais tentativas" }, { valor: "R$ 123 mil", rotulo: "em propostas enviadas" }], local: "General IT Solutions", periodo: "2026 – atual",
         atividades: [
           "Prospecção outbound de contas novas com IA, a partir de um ICP definido (indústria, saúde, varejo e agro; 100 a 500 funcionários).",
           "Reativação da carteira por prioridade (P1 a P4), com cadência de ligação, e-mail, WhatsApp e LinkedIn.",
@@ -438,14 +444,14 @@ const DATA = {
           "Montagem de propostas com cotações de distribuidores, definição de margem e modelo de faturamento.",
           "Registro de toda a atividade comercial no CRM (Omie) e acompanhamento do pipeline."
         ] },
-      { cargo: "Analista de Implantação (ERP/CRM)", logo: "logos/senior.png", local: "Senior Sistemas", periodo: "set/2025 – ago/2026",
+      { cargo: "Analista de Implantação (ERP/CRM)", logo: "logos/senior.png", numeros: [{ valor: "12 meses", rotulo: "implantando ERP e CRM" }], local: "Senior Sistemas", periodo: "set/2025 – ago/2026",
         atividades: [
           "Implantação de ERP/CRM para empresas do setor imobiliário na plataforma Hypnobox.",
           "Consumo e integração de APIs entre os sistemas do cliente.",
           "Configuração de modelos de contrato com tags dinâmicas de preenchimento automático.",
           "Levantamento de processos e treinamento dos usuários na implantação."
         ] },
-      { cargo: "Assistente de TI", logo: "logos/trisul.png", local: "Trisul", periodo: "jul/2024 – set/2025",
+      { cargo: "Assistente de TI", logo: "logos/trisul.png", numeros: [{ valor: "2", rotulo: "promoções" }, { valor: "14 meses", rotulo: "de Jovem Aprendiz a Assistente de TI" }, { valor: "3", rotulo: "sistemas integrados por API" }], local: "Trisul", periodo: "jul/2024 – set/2025",
         etapas: [
           { cargo: "Assistente de TI", periodo: "jul/2025 – set/2025" },
           { cargo: "Auxiliar de TI", periodo: "jan/2025 – jul/2025" },
@@ -457,21 +463,21 @@ const DATA = {
           "Análise de negócios ligada ao setor imobiliário.",
           "Duas promoções em pouco mais de um ano: de Jovem Aprendiz a Assistente de TI."
         ] },
-      { cargo: "Gerência de Loja", logo: "logos/smartsalgateria.png", local: "Smart Salgateria", periodo: "2021 – 2024", familiar: true,
+      { cargo: "Gerência de Loja", logo: "logos/smartsalgateria.png", numeros: [{ valor: "3 anos", rotulo: "na gerência da loja" }], local: "Smart Salgateria", periodo: "2021 – 2024", familiar: true,
         atividades: [
           "Gestão da operação da loja no dia a dia.",
           "Operação do canal de delivery no iFood: desempenho e promoções.",
           "Atendimento, equipe e rotina comercial de um negócio de alimentação."
         ] },
-      { cargo: "Marketing Comercial", logo: "logos/smartfood.png", local: "Smart Food Soluções", periodo: "2017 – 2020", familiar: true,
+      { cargo: "Marketing Comercial", logo: "logos/smartfood.png", numeros: [{ valor: "3 anos", rotulo: "no marketing comercial" }], local: "Smart Food Soluções", periodo: "2017 – 2020", familiar: true,
         atividades: [
           "Marketing comercial de uma indústria de máquinas para salgados e doces.",
           "Apoio às vendas e ao relacionamento com clientes do negócio da família."
         ] }
     ],
     formacao: [
-      { titulo: "MBA em Gestão de Negócios com IA", logo: "logos/mackenzie.png", sigla: "MK", local: "Mackenzie", periodo: "jul/2026 – dez/2027 (em curso)", pagina: "mackenzie/", aprendizados: ["Cada disciplina de gestão vem com uma disciplina de IA Aplicada correspondente.", "Controladoria, Estratégia e Finanças Corporativas aplicadas à tomada de decisão.", "Gestão de Projetos, Logística e Supply Chain.", "Marketing e Vendas Digitais, com uso de IA no processo comercial.", "Monografia final aplicando IA a um problema de negócio."] },
-      { titulo: "Análise e Desenvolvimento de Sistemas", logo: "logos/unisa.png", sigla: "UN", local: "Unisa", periodo: "2023 – 2026", aprendizados: ["Lógica e programação, com prática em Python.", "Banco de dados, modelagem e consultas.", "Levantamento de requisitos e análise de processos.", "Engenharia de software e ciclo de desenvolvimento de sistemas."] },
+      { titulo: "MBA em Gestão de Negócios com IA", logo: "logos/mackenzie.png", numeros: [{ valor: "432 h", rotulo: "de carga horária" }, { valor: "12", rotulo: "disciplinas, em 6 pares gestão + IA" }, { valor: "18 meses", rotulo: "de curso" }], sigla: "MK", local: "Mackenzie", periodo: "jul/2026 – dez/2027 (em curso)", pagina: "mackenzie/", aprendizados: ["Cada disciplina de gestão vem com uma disciplina de IA Aplicada correspondente.", "Controladoria, Estratégia e Finanças Corporativas aplicadas à tomada de decisão.", "Gestão de Projetos, Logística e Supply Chain.", "Marketing e Vendas Digitais, com uso de IA no processo comercial.", "Monografia final aplicando IA a um problema de negócio."] },
+      { titulo: "Análise e Desenvolvimento de Sistemas", logo: "logos/unisa.png", numeros: [{ valor: "3 anos", rotulo: "de graduação" }], sigla: "UN", local: "Unisa", periodo: "2023 – 2026", aprendizados: ["Lógica e programação, com prática em Python.", "Banco de dados, modelagem e consultas.", "Levantamento de requisitos e análise de processos.", "Engenharia de software e ciclo de desenvolvimento de sistemas."] },
       { titulo: "CAPM® · Certified Associate in Project Management", logo: "logos/pmi.png", sigla: "PMI", local: "PMI", periodo: "2026", aprendizados: ["Fundamentos do guia PMBOK: escopo, cronograma, custos, qualidade e riscos.", "Gestão de stakeholders e comunicação em projetos.", "Abordagens preditiva, ágil e híbrida.", "Certificação internacional do PMI."] },
       { titulo: "Liderança de Alta Performance", logo: "logos/usp.png", sigla: "USP", local: "USP", periodo: "", aprendizados: ["Gestão e desenvolvimento de equipes.", "Comunicação, feedback e influência.", "Tomada de decisão e foco em resultado."] },
       { titulo: "Inteligência Artificial", logo: "logos/startse.png", sigla: "SS", local: "StartSe", periodo: "", aprendizados: ["Conceitos de IA e IA generativa aplicados a negócios.", "Casos de uso de IA em processos e vendas.", "Como avaliar oportunidades de automação."] },
@@ -868,10 +874,12 @@ if (!reduce && matchMedia("(hover:hover) and (pointer:fine)").matches) {
     const t = edu ? d.sobre.formacao[i] : d.sobre.trajetoria[i]; last = document.activeElement;
     body.innerHTML = `<div class="sheet-head"><span class="lg">${t.logo ? `<img src="${esc(logoSrc(t.logo))}" alt="">` : esc(initials(t.local))}</span>
       <div><h3 id="jobTitle">${fmt(edu ? t.titulo : t.cargo)}</h3><p>${fmt(t.local)}${t.periodo ? ` · ${fmt(t.periodo)}` : ""}</p></div></div>
+      ${t.numeros ? `<div class="sheet-stats n${t.numeros.length}">${t.numeros.map(n => `<div><b class="grad"${counter(n.valor)}>${fmt(n.valor)}</b><span>${fmt(n.rotulo)}</span></div>`).join("")}</div>` : ""}
       ${t.etapas ? `<h4>Progressão</h4><ul>${t.etapas.map(e => `<li>${fmt(e.cargo)} · <span style="color:var(--muted)">${fmt(e.periodo)}</span></li>`).join("")}</ul>` : ""}
       <h4>${edu ? "O que aprendi" : "O que fiz"}</h4><ul>${(edu ? t.aprendizados : t.atividades).map(a => `<li>${fmt(a)}</li>`).join("")}</ul>
       ${t.pagina ? `<a class="sheet-link" href="${esc(t.pagina)}">Ver tudo o que estou aprendendo ›</a>` : ""}`;
     modal.classList.add("open"); modal.setAttribute("aria-hidden", "false");
+    body.querySelectorAll("[data-count]").forEach(countUp);
     document.getElementById("jobClose").focus();
   };
   const close = () => { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); if (last) last.focus(); };
