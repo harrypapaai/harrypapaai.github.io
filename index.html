@@ -4,6 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portfólio Humberto · General IT</title>
+<meta name="description" content="Humberto Anastácio, Account Manager na General IT Solutions. Vendas B2B de infraestrutura de TI com processo e IA: prospecção por ICP, reativação de carteira, propostas e cases com resultados.">
+<link rel="canonical" href="https://humbertoanastacio.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://humbertoanastacio.github.io/">
+<meta property="og:title" content="Humberto Anastácio · Account Manager">
+<meta property="og:description" content="Vendas B2B de infraestrutura de TI, com processo e IA. Método, indicadores e cases.">
+<meta property="og:image" content="https://humbertoanastacio.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Humberto Anastácio · Vendas B2B. Com processo e IA.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232997ff'/%3E%3Cstop offset='.55' stop-color='%235e5ce6'/%3E%3Cstop offset='1' stop-color='%23bf5af2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='27' font-weight='700' fill='%23fff'%3EHA%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,6 +53,10 @@ nav .brand{font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:12px}
 nav ul a{color:var(--ink);opacity:.8}
 nav ul a:hover{opacity:1;text-decoration:none}
+.menu{display:none;width:40px;height:40px;margin-right:-10px;border:0;background:none;color:var(--ink);cursor:pointer;border-radius:10px}
+.menu svg{width:20px;height:20px;display:block;margin:auto}
+.menu .x-ico,nav.open .menu .bars{display:none}
+nav.open .menu .x-ico{display:block}
 
 /* HERO */
 .hero{text-align:center;padding:88px 0 0;background:var(--white);overflow:hidden}
@@ -55,7 +74,7 @@ nav ul a:hover{opacity:1;text-decoration:none}
 .flow-head{text-align:center;display:grid;gap:6px}
 .flow-head p{font-size:15px;font-weight:600;color:var(--night-muted)}
 .flow-head h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.035em;line-height:1.1}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n,5),1fr);gap:12px;position:relative}
 .steps::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,rgba(41,151,255,.25),rgba(191,90,242,.25))}
 .steps::after{content:"";position:absolute;top:19px;left:10%;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 14px 4px rgba(41,151,255,.8);animation:travel 6s var(--ease) infinite}
 @keyframes travel{0%{left:10%;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:calc(90% - 10px);opacity:0}}
@@ -65,6 +84,7 @@ nav ul a:hover{opacity:1;text-decoration:none}
 .step b{font-size:clamp(22px,2.6vw,32px);font-weight:700;letter-spacing:-.04em;line-height:1.1}
 .step strong{font-size:15px;font-weight:600}
 .step span{font-size:13px;color:var(--night-muted);max-width:16ch}
+.step b.blank{visibility:hidden}
 .device .caption{position:relative;margin-top:36px;text-align:center;color:var(--night-muted);font-size:14px}
 .device .caption b{color:var(--night-ink);font-weight:600}
 
@@ -156,6 +176,7 @@ section{padding:120px 0}
 .stat{margin:48px auto 0;display:grid;gap:4px;justify-items:center}
 .stat b{font-size:clamp(80px,14vw,168px);line-height:1;font-weight:700;letter-spacing:-.04em;padding:0 .1em .04em;display:inline-block}
 .stat span{font-size:19px;color:var(--muted)}
+.stat b .todo{font-size:inherit;color:var(--todo)}
 .cols{display:grid;grid-template-columns:1fr 1.25fr;grid-template-areas:"ctx act" "prob act";gap:16px;text-align:left;margin-top:56px}
 .col.ctx{grid-area:ctx}.col.prob{grid-area:prob}.col.act{grid-area:act;padding:30px 32px}
 .col.act ul{gap:14px}
@@ -174,12 +195,15 @@ section{padding:120px 0}
 .tag{font-size:13px;color:var(--muted);border:1px solid var(--hair);border-radius:980px;padding:5px 13px}
 
 /* TIMELINE (horizontal) */
-.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(340px,82vw);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 28px;margin:0 auto;max-width:1180px;scrollbar-width:thin}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(340px,82vw);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:22px;padding:4px 22px 28px;margin:0 auto;max-width:1180px;scrollbar-width:thin}
 .card{scroll-snap-align:start;background:var(--night-2);border-radius:24px;padding:30px 28px;display:grid;gap:14px;align-content:start;min-height:230px}
 .card time{font-size:14px;font-weight:600;color:var(--link-night)}
 .card ul{margin:0;padding-left:18px;color:var(--night-ink);display:grid;gap:8px;font-size:17px}
 .card li::marker{color:var(--night-muted)}
 .hint{text-align:center;color:var(--night-muted);font-size:14px;margin-top:6px}
+.rail:focus-visible{outline-color:var(--link-night)}
+.card.last{background:linear-gradient(var(--night-2),var(--night-2)) padding-box,var(--grad) border-box;border:1.5px solid transparent}
+.draft-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:40;background:#fff4dc;color:#8a5a00;border:1px solid #f1d9a6;border-radius:980px;padding:8px 16px;font-size:13px;font-weight:600;box-shadow:0 10px 30px -12px rgba(0,0,0,.3);white-space:nowrap}
 
 /* SKILLS */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -208,6 +232,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 
 @media (max-width:834px){
   nav ul{display:none}
+  .menu{display:block}
+  nav.open ul{display:grid;gap:0;position:absolute;top:48px;left:0;right:0;padding:6px 22px 14px;background:rgba(251,251,253,.97);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);font-size:17px}
+  nav.open ul a{display:block;padding:12px 0;opacity:1;border-bottom:1px solid rgba(0,0,0,.06)}
+  nav.open li:last-child a{border-bottom:0}
+  .step b.blank{display:none}
   .cols{grid-template-columns:1fr;grid-template-areas:"ctx" "prob" "act";gap:12px}
   .cv{grid-template-columns:1fr}
   .skills{grid-template-columns:1fr 1fr}
@@ -225,7 +254,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   .tile{min-height:180px;padding:32px 28px}
 }
 @media print{
-  nav,.ctas,.hint,.device canvas,.steps::after{display:none}
+  nav,.ctas,.hint,.device canvas,.steps::after,.draft-bar{display:none}
   .device{background:#fff;color:#000;border:1px solid #999;box-shadow:none;min-height:0}
   .flow,.step span,.flow-head p,.device .caption,.device .caption b{color:#000}
   .step i{background:#fff;color:#000;border-color:#000}
@@ -244,8 +273,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 </style>
 </head>
 <body>
-<nav aria-label="Seções"><div class="wrap"><a class="brand" href="#top" id="brand"></a>
-  <ul><li><a href="#sobre">Sobre mim</a></li><li><a href="#indicadores">Indicadores</a></li><li><a href="#cases">Cases</a></li><li><a href="#competencias">Competências</a></li></ul>
+<nav aria-label="Seções" id="nav"><div class="wrap"><a class="brand" href="#top" id="brand"></a>
+  <button class="menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navList"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="x-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <ul id="navList"><li><a href="#sobre">Sobre mim</a></li><li><a href="#indicadores">Indicadores</a></li><li><a href="#cases">Cases</a></li><li><a href="#linha-do-tempo">Linha do tempo</a></li><li><a href="#competencias">Competências</a></li></ul>
 </div></nav>
 <header class="hero" id="top"></header>
 <main id="app"></main>
@@ -255,7 +285,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <script>
 /* ============================================================
    EDITE AQUI. Todo o conteúdo da página vem deste objeto.
-   Texto entre [colchetes] aparece destacado como "a preencher".
+   Texto entre [colchetes] é "a preencher": fica oculto no site
+   publicado e só aparece, destacado, abrindo a página com
+   ?rascunho no fim do endereço. Um número de destaque ou um
+   resultado só com [colchetes] some por inteiro até ser preenchido.
    ============================================================ */
 const DATA = {
   nome: "Humberto Anastácio",
@@ -416,7 +449,10 @@ const DATA = {
 };
 /* ============================================================ */
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmt = s => esc(s).replace(/\[([^\]]+)\]/g, '<span class="todo" title="A preencher">[$1]</span>');
+const DRAFT = /[?&]rascunho\b/.test(location.search);
+const strip = s => String(s ?? "").replace(/\s*\[[^\]]*\]/g, "").trim();
+const filled = s => (DRAFT ? String(s ?? "").trim() : strip(s)) !== "";
+const fmt = s => DRAFT ? esc(s).replace(/\[([^\]]+)\]/g, '<span class="todo" title="A preencher">[$1]</span>') : esc(strip(s));
 const d = DATA;
 const isLink = /^https?:\/\//.test(d.linkedin);
 const pad = n => String(n).padStart(2, "0");
@@ -454,11 +490,14 @@ document.getElementById("top").innerHTML = `
     <div class="device"><canvas id="net" aria-hidden="true"></canvas>
       <div class="flow">
         <div class="flow-head"><p>Meu método</p><h2>Do primeiro contato à <span class="grad">receita recorrente.</span></h2></div>
-        <ol class="steps">${d.metodo.map((m, i) => `<li class="step"><i>${i + 1}</i><b>${fmt(m.numero)}</b><strong>${fmt(m.etapa)}</strong><span>${fmt(m.texto)}</span></li>`).join("")}</ol>
+        <ol class="steps" style="--n:${d.metodo.length}">${d.metodo.map((m, i) => `<li class="step"><i>${i + 1}</i>${filled(m.numero) ? `<b>${fmt(m.numero)}</b>` : '<b class="blank" aria-hidden="true">0</b>'}<strong>${fmt(m.etapa)}</strong><span>${fmt(m.texto)}</span></li>`).join("")}</ol>
       </div>
       <p class="caption"><b>${fmt(d.empresa)}</b> · infraestrutura, cloud e segurança · ${fmt(d.periodo)}</p>
     </div>
   </div>`;
+
+const registro = d.registro.filter(r => filled(r.semana))
+  .map(r => ({ ...r, itens: r.itens.filter(filled) })).filter(r => r.itens.length);
 
 document.getElementById("app").innerHTML = `
 <section class="paper" id="sobre" aria-labelledby="h-sobre">
@@ -475,7 +514,7 @@ document.getElementById("app").innerHTML = `
 <section class="night" id="indicadores" aria-labelledby="h-kpi">
   <div class="wrap">
     <div class="head reveal"><p class="kicker">Indicadores</p><h2 id="h-kpi">Os números <span class="grad">falam primeiro.</span></h2><p>Resultado das primeiras semanas na operação comercial.</p></div>
-    <div class="bento">${d.indicadores.map(k => `<div class="tile reveal"><b class="grad"${counter(k.valor)}>${fmt(k.valor)}</b><span>${fmt(k.rotulo)}</span></div>`).join("")}</div>
+    <div class="bento">${d.indicadores.filter(k => filled(k.valor)).map(k => `<div class="tile reveal"><b class="grad"${counter(k.valor)}>${fmt(k.valor)}</b><span>${fmt(k.rotulo)}</span></div>`).join("")}</div>
   </div>
 </section>
 
@@ -485,8 +524,8 @@ document.getElementById("app").innerHTML = `
       <p class="kicker reveal">Case ${pad(i + 1)} · ${fmt(c.quando)}</p>
       <h3 id="case-${i}" class="reveal">${fmt(c.frase || c.titulo)}</h3>
       <p class="title reveal">${fmt(c.titulo)}</p>
-      <div class="stat"><b class="grad"${counter(c.destaque)}>${fmt(c.destaque)}</b><span>${fmt(c.destaqueLegenda)}</span></div>
-      <p class="result reveal"><strong>Resultado.</strong> ${fmt(c.resultado)}</p>
+      ${filled(c.destaque) ? `<div class="stat"><b class="grad"${DRAFT ? "" : counter(c.destaque)}>${fmt(c.destaque)}</b><span>${fmt(c.destaqueLegenda)}</span></div>` : ""}
+      ${filled(c.resultado) ? `<p class="result reveal"><strong>Resultado.</strong> ${fmt(c.resultado)}</p>` : ""}
       <div class="cols reveal">
         <div class="col ctx"><h4><i>1</i>Contexto</h4><p>${fmt(c.contexto)}</p></div>
         <div class="col prob"><h4><i>2</i>Problema</h4><p>${fmt(c.problema)}</p></div>
@@ -496,6 +535,14 @@ document.getElementById("app").innerHTML = `
     </div>
   </section>`).join("")}
 </div>
+${registro.length ? `
+<section class="night" id="linha-do-tempo" aria-labelledby="h-reg">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker">Linha do tempo</p><h2 id="h-reg">Semana a semana, <span class="grad">desde o primeiro dia.</span></h2><p>O que foi feito em cada etapa na ${fmt(d.empresa)}.</p></div>
+  </div>
+  <ol class="rail" tabindex="0" aria-label="Linha do tempo, da mais antiga para a mais recente" style="list-style:none">${registro.map((r, i) => `<li class="card${i === registro.length - 1 ? " last" : ""}"><time>${fmt(r.semana)}</time><ul>${r.itens.map(x => `<li>${fmt(x)}</li>`).join("")}</ul></li>`).join("")}</ol>
+  <p class="hint" id="railHint">Arraste para o lado para ver mais ›</p>
+</section>` : ""}
 
 <section class="paper" id="competencias" aria-labelledby="h-skills">
   <div class="wrap">
@@ -506,7 +553,28 @@ document.getElementById("app").innerHTML = `
 
 document.getElementById("foot").innerHTML = `<span>${fmt(d.nome)} · ${fmt(d.empresa)}</span><span>Nomes de clientes e valores contratuais omitidos ou anonimizados por confidencialidade.</span>`;
 
+if (DRAFT) document.body.insertAdjacentHTML("beforeend", '<p class="draft-bar" role="status">Modo rascunho: campos a preencher visíveis</p>');
+
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Menu no celular */
+(() => {
+  const nav = document.getElementById("nav"), btn = document.getElementById("menuBtn");
+  const set = open => { nav.classList.toggle("open", open); btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu"); };
+  btn.addEventListener("click", () => set(!nav.classList.contains("open")));
+  nav.querySelectorAll("ul a").forEach(a => a.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
+  document.addEventListener("click", e => { if (!nav.contains(e.target)) set(false); });
+  matchMedia("(min-width:835px)").addEventListener("change", e => e.matches && set(false));
+})();
+
+/* Dica de arrastar só quando a linha do tempo não cabe na tela */
+(() => {
+  const rail = document.querySelector(".rail"), hint = document.getElementById("railHint");
+  if (!rail || !hint) return;
+  const check = () => { hint.hidden = rail.scrollWidth <= rail.clientWidth + 1; };
+  new ResizeObserver(check).observe(rail); check();
+})();
 
 /* Contagem dos números ao entrarem na tela */
 if (!reduce && "IntersectionObserver" in window) {
