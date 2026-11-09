@@ -3,32 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Oi, eu sou o Humberto</title>
-<meta name="description" content="Quem é o Humberto Anastácio: o que faço hoje, minha história e o que curto além do trabalho.">
+<title>Humberto Anastácio</title>
+<meta name="description" content="Humberto Anastácio: jovem empreendedor com vendas correndo no sangue. Criador do Smart Balcão, Account Manager na General IT e aluno de MBA no Mackenzie.">
 <link rel="canonical" href="https://humbertoanastacio.github.io/links/">
-<meta property="og:type" content="website">
+<meta property="og:type" content="profile">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://humbertoanastacio.github.io/links/">
-<meta property="og:title" content="Oi, eu sou o Humberto 👋">
-<meta property="og:description" content="O que faço hoje, minha história e o que curto além do trabalho.">
-<meta property="og:image" content="https://humbertoanastacio.github.io/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#fbfaf8">
+<meta property="og:title" content="Humberto Anastácio">
+<meta property="og:description" content="Filho do comércio, criador do Smart Balcão e vendedor de tecnologia. Minha história, o que faço hoje e o que curto além do trabalho.">
+<meta property="og:image" content="https://humbertoanastacio.github.io/fotos/humberto.jpg">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232997ff'/%3E%3Cstop offset='.55' stop-color='%235e5ce6'/%3E%3Cstop offset='1' stop-color='%23bf5af2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='27' font-weight='700' fill='%23fff'%3EHA%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="../icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add("js")</script>
 <style>
-/* Página pessoal para o link da bio do Instagram: clara, leve, feita para o celular */
+/* Página pessoal para o link da bio do Instagram: versão preta, feita para o celular */
 :root{
-  --bg:#fbfaf8; --card:#ffffff; --soft:#f3f1ee; --ink:#1d1d1f; --muted:#6e6e73; --hair:#e6e3df;
-  --blue:#2997ff; --link:#0066cc; --todo:#b25000;
+  --bg:#000000; --card:#141416; --soft:#222226; --ink:#f5f5f7; --muted:#a1a1a6; --hair:#2c2c30;
+  --blue:#2997ff; --link:#2997ff; --todo:#ff9f0a; --todo-bg:rgba(255,159,10,.14); --btn:#f5f5f7; --btn-ink:#000000;
   --grad:linear-gradient(90deg,#2997ff 0%,#5e5ce6 55%,#bf5af2 100%);
   --f:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --out:cubic-bezier(.2,.8,.2,1); --bounce:cubic-bezier(.34,1.56,.64,1);
-  color-scheme:light;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -37,14 +38,14 @@ h1,h2,h3,p{margin:0}
 a{color:var(--link);text-decoration:none}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:10px}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.04em}
-.todo{color:var(--todo);background:#fff4e5;border-bottom:1.5px dashed currentColor;border-radius:4px;padding:0 3px}
+.todo{color:var(--todo);background:var(--todo-bg);border-bottom:1.5px dashed currentColor;border-radius:4px;padding:0 3px}
 
 .bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .bg::before,.bg::after{content:"";position:absolute;border-radius:50%}
-.bg::before{width:560px;height:560px;right:-220px;top:-240px;background:radial-gradient(circle,rgba(41,151,255,.18),transparent 62%)}
-.bg::after{width:520px;height:520px;left:-260px;top:38%;background:radial-gradient(circle,rgba(191,90,242,.13),transparent 62%)}
+.bg::before{width:560px;height:560px;right:-220px;top:-240px;background:radial-gradient(circle,rgba(41,151,255,.3),transparent 62%)}
+.bg::after{width:520px;height:520px;left:-260px;top:38%;background:radial-gradient(circle,rgba(191,90,242,.22),transparent 62%)}
 
-main{max-width:520px;margin:0 auto;padding:48px 22px calc(40px + env(safe-area-inset-bottom))}
+main{max-width:520px;margin:0 auto;padding-block:48px calc(72px + env(safe-area-inset-bottom, 0px));padding-left:max(18px, env(safe-area-inset-left, 0px));padding-right:max(18px, env(safe-area-inset-right, 0px))}
 section{margin-top:44px}
 .label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 
@@ -59,14 +60,54 @@ section{margin-top:44px}
 .hi h1{margin-top:20px;font-size:clamp(28px,8vw,34px);line-height:1.08;letter-spacing:-.045em;font-weight:700}
 .nw-name{white-space:nowrap}
 .wave{display:inline-block;transform-origin:70% 80%}
+.rot{margin-top:10px;font-size:21px;font-weight:600;letter-spacing:-.025em;line-height:1.3;min-height:2.6em;max-width:22ch;text-wrap:balance}
+.rot .word{display:inline-block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.04em}
+.rot .word.swap{animation:swap .5s var(--out)}
 .hi .intro{margin-top:12px;font-size:18px;line-height:1.5;color:var(--muted);max-width:30ch}
 
 /* HOJE */
-.today{background:var(--card);border-radius:24px;padding:24px 22px;box-shadow:0 20px 40px -30px rgba(0,0,0,.25);position:relative;overflow:hidden}
+.today{background:var(--card);border-radius:24px;padding:24px 22px;box-shadow:inset 0 0 0 1px var(--hair);position:relative;overflow:hidden}
 .today::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad)}
 .today p{font-size:20px;line-height:1.4;font-weight:600;letter-spacing:-.025em}
 .today .where{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
 .today .where span{font-size:13px;font-weight:600;color:var(--muted);background:var(--soft);border-radius:980px;padding:4px 11px}
+
+/* PROJETO PESSOAL */
+.proj{position:relative;display:grid;gap:12px;padding:24px 22px 22px;border-radius:24px;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,#d7191c,#ffc72c) border-box;border:1.5px solid transparent;overflow:hidden}
+.proj::after{content:"";position:absolute;width:260px;height:260px;right:-120px;top:-130px;border-radius:50%;background:radial-gradient(circle,rgba(215,25,28,.28),transparent 65%);pointer-events:none}
+.proj .tag{justify-self:start;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#ffc72c;background:rgba(255,199,44,.12);border:1px solid rgba(255,199,44,.35);border-radius:980px;padding:3px 10px}
+.proj h3{font-size:26px;font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.proj p{font-size:15.5px;line-height:1.5;color:var(--muted)}
+.proj .why{color:var(--ink);font-weight:500}
+.btn.sb{background:#d7191c;color:#fff;position:relative;overflow:hidden}
+.btn.sb::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);pointer-events:none}
+.today,.nw,.fc{background-image:radial-gradient(260px circle at var(--mx,-999px) var(--my,-999px),rgba(41,151,255,.16),transparent 62%)}
+.hi h1 .ch{display:inline-block}
+.fc .em{display:inline-block;justify-self:start}
+
+/* HISTÓRIA EM STORIES */
+.stories{position:relative;border-radius:24px;overflow:hidden;background:var(--card);box-shadow:inset 0 0 0 1px var(--hair);user-select:none;-webkit-user-select:none}
+.sbars{position:absolute;top:12px;left:14px;right:14px;z-index:3;display:flex;gap:4px}
+.sbars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.22);overflow:hidden}
+.sbars b{display:block;height:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.sbars i.done b{transform:none}
+.sbars i.cur b{animation:fillbar var(--t,5s) linear forwards}
+.sbars.paused i.cur b{animation-play-state:paused}
+.strack{display:grid}
+.slide{grid-area:1/1;display:grid;align-content:end;gap:6px;min-height:270px;padding:44px 22px 24px;opacity:0;transform:translateX(18px);transition:opacity .45s var(--out),transform .55s var(--out);pointer-events:none}
+.slide.on{opacity:1;transform:none}
+.slide:nth-child(1){background:radial-gradient(120% 90% at 100% 0%,rgba(255,159,10,.22),transparent 60%)}
+.slide:nth-child(2){background:radial-gradient(120% 90% at 100% 0%,rgba(41,151,255,.25),transparent 60%)}
+.slide:nth-child(3){background:radial-gradient(120% 90% at 100% 0%,rgba(94,92,230,.28),transparent 60%)}
+.slide:nth-child(4){background:radial-gradient(120% 90% at 100% 0%,rgba(191,90,242,.28),transparent 60%)}
+.slide .em{font-size:44px;line-height:1;margin-bottom:6px}
+.slide time{font-size:13px;font-weight:600;color:var(--blue)}
+.slide h3{font-size:23px;font-weight:700;letter-spacing:-.035em;line-height:1.15}
+.slide p{font-size:15.5px;line-height:1.5;color:var(--muted)}
+.snav{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:1fr 2fr}
+.snav button{border:0;background:transparent;cursor:pointer;padding:0}
+.snav button:focus-visible{outline:2px solid var(--blue);outline-offset:-4px;border-radius:20px}
+.shint{margin-top:10px;font-size:13px;color:var(--muted);text-align:center}
 
 /* HISTÓRIA */
 .story{list-style:none;margin:0;padding:0 0 0 30px;position:relative;display:grid;gap:18px}
@@ -78,9 +119,20 @@ section{margin-top:44px}
 .story h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin-top:1px}
 .story p{font-size:15.5px;color:var(--muted);margin-top:3px;line-height:1.45}
 
+/* PERGUNTAS RÁPIDAS */
+.qa{display:grid;gap:8px}
+.qa details{background:var(--card);border-radius:18px;box-shadow:inset 0 0 0 1px var(--hair);transition:box-shadow .3s}
+.qa details[open]{box-shadow:inset 0 0 0 1.5px var(--blue)}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 16px 16px 18px;font-size:16.5px;font-weight:600;line-height:1.3}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-style:normal;font-size:18px;line-height:1;color:var(--ink);transition:transform .35s var(--bounce),background .3s}
+.qa details[open] summary i{transform:rotate(45deg);background:var(--blue);color:#fff}
+.qa .ans{padding:0 18px 16px;font-size:15.5px;line-height:1.5;color:var(--muted)}
+.qa-hint{font-size:13px;color:var(--muted);margin:-4px 0 12px}
+
 /* AGORA */
 .now{display:grid;gap:10px}
-.nw{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;background:var(--card);border-radius:18px;padding:14px 16px 14px 14px;color:var(--ink);box-shadow:0 14px 30px -26px rgba(0,0,0,.3);transition:transform .35s var(--bounce)}
+.nw{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;background:var(--card);border-radius:18px;padding:14px 16px 14px 14px;color:var(--ink);box-shadow:inset 0 0 0 1px var(--hair);transition:transform .35s var(--bounce)}
 a.nw:hover{transform:translateY(-2px)}
 .nw .em{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px}
 .nw b{display:block;font-size:16px;font-weight:600;line-height:1.3}
@@ -89,7 +141,7 @@ a.nw:hover{transform:translateY(-2px)}
 
 /* ALÉM DO TRABALHO */
 .fun{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fc{background:var(--card);border-radius:20px;padding:18px 16px;display:grid;gap:6px;align-content:start;box-shadow:0 14px 30px -26px rgba(0,0,0,.3);transition:transform .35s var(--bounce)}
+.fc{background:var(--card);border-radius:20px;padding:18px 16px;display:grid;gap:6px;align-content:start;box-shadow:inset 0 0 0 1px var(--hair);transition:transform .35s var(--bounce)}
 .fc:hover{transform:translateY(-3px) rotate(-1deg)}
 .fc .em{font-size:30px;line-height:1}
 .fc b{font-size:16px;font-weight:600;line-height:1.25}
@@ -101,16 +153,24 @@ a.nw:hover{transform:translateY(-2px)}
 .btn:hover{transform:translateY(-2px);text-decoration:none}
 .btn:active{transform:scale(.98)}
 .btn svg{width:20px;height:20px}
-.btn.main{background:var(--ink);color:#fff}
+.btn.main{background:var(--btn);color:var(--btn-ink)}
 .btn.li{background:#0a66c2;color:#fff}
 .btn.wa{background:#25d366;color:#fff}
 .btn.ghost{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--hair)}
 
 footer{margin-top:36px;text-align:center;font-size:12.5px;color:var(--muted)}
-.draft-bar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9;background:#fff4dc;color:#8a5a00;border:1px solid #f1d9a6;border-radius:980px;padding:7px 14px;font-size:12.5px;font-weight:600;box-shadow:0 10px 30px -12px rgba(0,0,0,.3);white-space:nowrap}
+.draft-bar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);z-index:9;background:#2a1f0a;color:var(--todo);border:1px solid rgba(255,159,10,.4);border-radius:980px;padding:7px 14px;font-size:12.5px;font-weight:600;box-shadow:0 10px 30px -12px rgba(0,0,0,.3);white-space:nowrap}
 
 /* MOVIMENTO */
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(.55em) rotate(8deg)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes hop{0%,100%{transform:none}35%{transform:translateY(-10px) rotate(-8deg) scale(1.15)}65%{transform:translateY(0) rotate(4deg)}}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes fillbar{from{transform:scaleX(0)}to{transform:none}}
+@keyframes swap{from{opacity:0;transform:translateY(60%)}to{opacity:1;transform:none}}
+@keyframes open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes wave{0%,60%,100%{transform:none}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -125,10 +185,16 @@ footer{margin-top:36px;text-align:center;font-size:12.5px;color:var(--muted)}
   .hi h1{animation:up .8s .12s var(--out) both}
   .hi .intro{animation:up .8s .24s var(--out) both}
   .wave{animation:wave 2.4s .8s ease-in-out 2}
-  html.js .rv{opacity:0;translate:0 24px;transition:opacity .7s var(--out),translate .8s var(--out);transition-delay:var(--d,0s)}
-  html.js .rv.on{opacity:1;translate:none}
-  html.js .story::before{transform:scaleY(0);transition:transform 1.4s var(--out) .15s}
-  html.js .story.on::before{transform:none}
+  .rv{animation:up .7s var(--out) both;animation-delay:calc(.35s + var(--d,0s))}
+  .story::before{animation:grow 1.4s var(--out) .5s both}
+  .hi h1{animation:none}
+  .hi h1 .ch{animation:rise .7s var(--out) both;animation-delay:calc(.15s + var(--i) * 30ms)}
+  .today .where span{animation:pop .5s var(--bounce) both;animation-delay:calc(.9s + var(--i,0) * 90ms)}
+  .fc:hover .em,.fc:active .em{animation:hop .6s var(--bounce)}
+  .btn.sb::after{animation:shine 3.4s ease-in-out 2s infinite}
+  @supports (animation-timeline: view()){
+    main > section:not(.hi).rv,main section .rv{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 55%;animation-delay:0s}
+  }
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media (max-width:360px){.fun{grid-template-columns:1fr}}
@@ -148,36 +214,46 @@ footer{margin-top:36px;text-align:center;font-size:12.5px;color:var(--muted)}
    ============================================================ */
 const EU = {
   nome: "Humberto",
+  nomeCompleto: "Humberto Anastácio",
+  /* Frases que se alternam no topo, depois de "Sou" */
+  sou: ["filho do comércio", "criador do Smart Balcão", "vendedor de tecnologia", "formado em Análise e Desenvolvimento de Sistemas", "aluno de MBA no Mackenzie", "ciclista nas horas vagas"],
   iniciais: "HA",
-  foto: "",
-  intro: "[sua frase de apresentação, do seu jeito, como você se apresentaria numa conversa]",
+  foto: "../fotos/humberto.jpg",
+  intro: "Cresci atrás do balcão da família e hoje uso tecnologia pra ajudar negócios a crescer. Fora isso, você me encontra pedalando, no futevôlei ou com a família.",
 
-  hoje: "Ajudo empresas a escolher e manter a tecnologia que faz o negócio rodar. E uso IA pra trabalhar melhor.",
-  onde: ["Account Manager na General IT", "[sua cidade]"],
+  hoje: "Sou um jovem empreendedor com vendas correndo no sangue. No dia a dia, ajudo empresas com a infraestrutura de TI. No meu projeto pessoal, crio o Smart Balcão para padarias e salgaterias venderem online.",
+  onde: ["Criador do Smart Balcão", "Account Manager na General IT", "Formado em Análise e Desenvolvimento de Sistemas", "São Paulo, SP"],
+
+  /* Projeto pessoal em destaque */
+  projeto: {
+    nome: "Smart Balcão",
+    texto: "Loja de pedidos online com a cara do seu balcão: cardápio, PIX, cartão e acompanhamento do pedido, sem comissão por venda. Para padarias, salgaterias, confeitarias e lanchonetes.",
+    porque: "Nasceu no balcão da salgateria da família. Cuidando do delivery no iFood, vi de perto quanto a comissão pesa no bolso de quem vende. Quis criar um jeito de vender online sem entregar a margem.",
+    url: "https://smartbalcao.com.br/"
+  },
 
   historia: [
-    { quando: "2017 – 2024", titulo: "Cresci no balcão", texto: "Trabalhei nos negócios da família: do marketing de uma fábrica de máquinas de salgados à gerência de uma salgateria." },
-    { quando: "2024", titulo: "Entrei na tecnologia", texto: "Comecei como Jovem Aprendiz de TI na Trisul e, em pouco mais de um ano, já era Assistente de TI." },
-    { quando: "2025", titulo: "Aprendi como os sistemas funcionam por dentro", texto: "Na Senior, implantei sistemas de gestão para empresas do setor imobiliário." },
-    { quando: "2026", titulo: "Escolhi vendas", texto: "Hoje junto a bagagem técnica com o lado comercial, e comecei um MBA em Gestão de Negócios com IA no Mackenzie." }
+    { emoji: "🏪", quando: "2017 – 2024", titulo: "Cresci no balcão", texto: "Trabalhei nos negócios da família: do marketing de uma fábrica de máquinas de salgados à gerência de uma salgateria." },
+    { emoji: "💻", quando: "2024", titulo: "Entrei na tecnologia", texto: "Comecei como Jovem Aprendiz de TI na Trisul e, em pouco mais de um ano, já era Assistente de TI." },
+    { emoji: "⚙️", quando: "2025", titulo: "Aprendi como os sistemas funcionam por dentro", texto: "Na Senior, implantei sistemas de gestão para empresas do setor imobiliário." },
+    { emoji: "🚀", quando: "2026", titulo: "Escolhi vendas e criei meu projeto", texto: "Juntei a bagagem técnica com o lado comercial, comecei um MBA em Gestão de Negócios com IA no Mackenzie e tirei do papel o Smart Balcão." }
   ],
 
   agora: [
-    { emoji: "🎓", titulo: "MBA em Gestão de Negócios com IA", texto: "Mackenzie · veja o que estou aprendendo", url: "../mackenzie/" },
-    { emoji: "🇺🇸", titulo: "Inglês", texto: "Rumo ao B2, conversando cada vez mais" },
-    { emoji: "✨", titulo: "[outra coisa que você está aprendendo ou curtindo agora]", texto: "[uma frase sobre isso]" }
+    { emoji: "🎓", titulo: "MBA em Gestão de Negócios com IA", texto: "Mackenzie · veja o que estou aprendendo", url: "https://humbertoanastacio.github.io/mackenzie/" },
+    { emoji: "🇺🇸", titulo: "Inglês", texto: "Rumo ao B2, conversando cada vez mais" }
   ],
 
   alem: [
-    { emoji: "[emoji]", titulo: "[hobby ou interesse 1]", texto: "[uma frase sobre isso]" },
-    { emoji: "[emoji]", titulo: "[hobby ou interesse 2]", texto: "[uma frase sobre isso]" },
-    { emoji: "[emoji]", titulo: "[hobby ou interesse 3]", texto: "[uma frase sobre isso]" },
-    { emoji: "[emoji]", titulo: "[hobby ou interesse 4]", texto: "[uma frase sobre isso]" }
+    { emoji: "🚴", titulo: "Ciclismo", texto: "Pedalar é meu jeito de limpar a cabeça e pensar melhor." },
+    { emoji: "⚽", titulo: "Futevôlei", texto: "Areia, amigos e bola no ar: meu jeito favorito de desligar." },
+    { emoji: "🏡", titulo: "Tempo com a família", texto: "Foi com eles que aprendi a trabalhar, e é com eles que gosto de estar." },
+    { emoji: "🙏", titulo: "Praticante da fé", texto: "A fé é a base de tudo o que eu faço." }
   ],
 
-  portfolio: "../",
+  portfolio: "https://humbertoanastacio.github.io/",
   linkedin: "https://www.linkedin.com/in/humberto-meireles-anastacio-b0a307176",
-  whatsapp: "[link do WhatsApp, se quiser mostrar; senão, apague esta linha]"
+  whatsapp: "https://wa.me/5511995513499"
 };
 /* ============================================================ */
 const DRAFT = /[?&]rascunho\b/.test(location.search);
@@ -190,6 +266,7 @@ const LI = sv('<path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.25 
 const WA = sv('<path d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 5-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3z"/>', 1);
 const BAG = sv('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>');
 const e = EU;
+const sou = e.sou.filter(filled);
 const agora = e.agora.filter(a => filled(a.titulo));
 const alem = e.alem.filter(a => filled(a.titulo));
 const temWa = filled(e.whatsapp) && (DRAFT || /^https?:/.test(strip(e.whatsapp)));
@@ -197,23 +274,34 @@ const temWa = filled(e.whatsapp) && (DRAFT || /^https?:/.test(strip(e.whatsapp))
 document.getElementById("app").innerHTML = `
   <section class="hi" aria-labelledby="h-hi">
     <div class="photo"><div class="in">${e.foto ? `<img src="${esc(e.foto)}" alt="Foto de ${esc(e.nome)}">` : `<span class="ph" aria-hidden="true">${esc(e.iniciais)}${DRAFT ? "<small>[sua foto aqui]</small>" : ""}</span>`}</div></div>
-    <h1 id="h-hi">Oi, eu sou o <span class="nw-name">${esc(e.nome)} <span class="wave" aria-hidden="true">👋</span></span></h1>
+    <h1 id="h-hi" aria-label="${esc(e.nomeCompleto)}">${[...e.nomeCompleto].map((c, i) => `<span class="ch" aria-hidden="true" style="--i:${i}">${c === " " ? "&nbsp;" : esc(c)}</span>`).join("")}</h1>
+    <p class="rot" aria-label="Sou ${esc(sou.map(strip).filter(Boolean).join(", "))}">Sou <span class="word" id="word" aria-hidden="true">${fmt(sou[0])}</span></p>
     ${filled(e.intro) ? `<p class="intro">${fmt(e.intro)}</p>` : ""}
   </section>
 
   <section class="rv" aria-labelledby="h-today">
     <p class="label" id="h-today">O que eu faço hoje</p>
-    <div class="today"><p>${fmt(e.hoje)}</p><div class="where">${e.onde.filter(filled).map(o => `<span>${fmt(o)}</span>`).join("")}</div></div>
+    <div class="today"><p>${fmt(e.hoje)}</p><div class="where">${e.onde.filter(filled).map((o, i) => `<span style="--i:${i}">${fmt(o)}</span>`).join("")}</div></div>
+  </section>
+
+  <section class="rv" aria-labelledby="h-proj">
+    <p class="label" id="h-proj">Meu projeto pessoal</p>
+    <div class="proj"><h3>${fmt(e.projeto.nome)}</h3><p>${fmt(e.projeto.texto)}</p>${filled(e.projeto.porque) ? `<p class="why">${fmt(e.projeto.porque)}</p>` : ""}<a class="btn sb" href="${esc(e.projeto.url)}" target="_blank" rel="noopener">Conhecer o ${esc(e.projeto.nome)} ›</a></div>
   </section>
 
   <section aria-labelledby="h-story">
     <p class="label rv" id="h-story">Minha história em ${e.historia.length} passos</p>
-    <ol class="story rv">${e.historia.map(h => `<li><time>${fmt(h.quando)}</time><h3>${fmt(h.titulo)}</h3><p>${fmt(h.texto)}</p></li>`).join("")}</ol>
+    <div class="stories rv" id="stories" role="region" aria-roledescription="carrossel" aria-label="Minha história">
+      <div class="sbars" aria-hidden="true">${e.historia.map(() => "<i><b></b></i>").join("")}</div>
+      <div class="strack">${e.historia.map((h, i) => `<article class="slide${i === 0 ? " on" : ""}" aria-label="${i + 1} de ${e.historia.length}"${i === 0 ? "" : ' aria-hidden="true"'}><span class="em" aria-hidden="true">${fmt(h.emoji)}</span><time>${fmt(h.quando)}</time><h3>${fmt(h.titulo)}</h3><p>${fmt(h.texto)}</p></article>`).join("")}</div>
+      <div class="snav"><button type="button" data-go="-1" aria-label="Passo anterior"></button><button type="button" data-go="1" aria-label="Próximo passo"></button></div>
+    </div>
+    <p class="shint rv">Toque na direita para avançar e na esquerda para voltar.</p>
   </section>
 
   ${agora.length ? `<section aria-labelledby="h-now">
     <p class="label rv" id="h-now">No que estou mergulhado agora</p>
-    <div class="now">${agora.map((a, i) => { const tag = a.url ? "a" : "div"; return `<${tag} class="nw rv" style="--d:${i * 70}ms"${a.url ? ` href="${esc(a.url)}"` : ""}><span class="em" aria-hidden="true">${fmt(a.emoji)}</span><span><b>${fmt(a.titulo)}</b>${filled(a.texto) ? `<small>${fmt(a.texto)}</small>` : ""}</span>${a.url ? '<span class="go" aria-hidden="true">›</span>' : "<span></span>"}</${tag}>`; }).join("")}</div>
+    <div class="now">${agora.map((a, i) => { const tag = a.url ? "a" : "div"; return `<${tag} class="nw rv" style="--d:${i * 70}ms"${a.url ? ` href="${esc(a.url)}" target="_blank" rel="noopener"` : ""}><span class="em" aria-hidden="true">${fmt(a.emoji)}</span><span><b>${fmt(a.titulo)}</b>${filled(a.texto) ? `<small>${fmt(a.texto)}</small>` : ""}</span>${a.url ? '<span class="go" aria-hidden="true">›</span>' : "<span></span>"}</${tag}>`; }).join("")}</div>
   </section>` : ""}
 
   ${alem.length ? `<section aria-labelledby="h-fun">
@@ -224,22 +312,53 @@ document.getElementById("app").innerHTML = `
   <section aria-labelledby="h-cta">
     <p class="label rv" id="h-cta">Quer saber mais?</p>
     <div class="cta">
-      <a class="btn main rv" href="${esc(e.portfolio)}">${BAG}Ver meu trabalho</a>
+      <a class="btn sb rv" href="${esc(e.projeto.url)}" target="_blank" rel="noopener">Smart Balcão, meu projeto</a>
+      <a class="btn main rv" style="--d:40ms" href="${esc(e.portfolio)}" target="_blank" rel="noopener">${BAG}Meu portfólio profissional</a>
       <a class="btn li rv" style="--d:70ms" href="${esc(e.linkedin)}" target="_blank" rel="noopener">${LI}Me chama no LinkedIn</a>
-      ${temWa ? `<a class="btn wa rv" style="--d:140ms" href="${DRAFT ? "#" : esc(strip(e.whatsapp))}" target="_blank" rel="noopener">${WA}${DRAFT && !/^https?:/.test(strip(e.whatsapp)) ? fmt(e.whatsapp) : "WhatsApp"}</a>` : ""}
+      ${temWa ? `<a class="btn wa rv" style="--d:140ms" href="${/^https?:/.test(strip(e.whatsapp)) ? esc(strip(e.whatsapp)) : "#"}" target="_blank" rel="noopener">${WA}${DRAFT && !/^https?:/.test(strip(e.whatsapp)) ? fmt(e.whatsapp) : "Me chama no WhatsApp"}</a>` : ""}
     </div>
   </section>
 
-  <footer><a href="../">humbertoanastacio.github.io</a></footer>`;
+  <footer><a href="https://humbertoanastacio.github.io/">humbertoanastacio.github.io</a></footer>`;
+
+(() => {
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  document.addEventListener("pointermove", ev => {
+    const el = ev.target.closest && ev.target.closest(".today, .nw, .fc"); if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", (ev.clientX - r.left) + "px"); el.style.setProperty("--my", (ev.clientY - r.top) + "px");
+  }, { passive: true });
+})();
+
+(() => {
+  const box = document.getElementById("stories"); if (!box) return;
+  const slides = [...box.querySelectorAll(".slide")], bars = [...box.querySelectorAll(".sbars i")], wrap = box.querySelector(".sbars");
+  const auto = !matchMedia("(prefers-reduced-motion: reduce)").matches, T = 5000;
+  let i = 0, timer = 0;
+  const show = n => {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.classList.toggle("on", k === i); s.setAttribute("aria-hidden", k === i ? "false" : "true"); });
+    bars.forEach((b, k) => { b.className = k < i ? "done" : ""; });
+    if (auto) { void bars[i].offsetWidth; bars[i].className = "cur"; bars[i].style.setProperty("--t", T + "ms"); clearTimeout(timer); timer = setTimeout(() => show(i + 1), T); }
+    else bars[i].className = "done";
+  };
+  box.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => show(i + +b.dataset.go)));
+  box.addEventListener("keydown", ev => { if (ev.key === "ArrowRight") show(i + 1); if (ev.key === "ArrowLeft") show(i - 1); });
+  const pause = on => { wrap.classList.toggle("paused", on); if (on) clearTimeout(timer); else if (auto) { const left = T * (1 - (bars[i].querySelector("b").getBoundingClientRect().width / bars[i].getBoundingClientRect().width || 0)); timer = setTimeout(() => show(i + 1), left); } };
+  box.addEventListener("pointerdown", () => pause(true)); box.addEventListener("pointerup", () => pause(false)); box.addEventListener("pointerleave", () => wrap.classList.contains("paused") && pause(false));
+  show(0);
+})();
+
+(() => {
+  const w = document.getElementById("word"); if (!w || sou.length < 2) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let i = 0;
+  setInterval(() => { i = (i + 1) % sou.length; w.innerHTML = fmt(sou[i]); w.classList.remove("swap"); void w.offsetWidth; w.classList.add("swap"); }, 2200);
+})();
 
 if (DRAFT) document.body.insertAdjacentHTML("beforeend", '<p class="draft-bar" role="status">Rascunho: campos a preencher visíveis</p>');
 
-(() => {
-  const els = document.querySelectorAll(".rv");
-  if (!("IntersectionObserver" in window)) { els.forEach(el => el.classList.add("on")); return; }
-  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { io.unobserve(x.target); x.target.classList.add("on"); } }), { threshold: .15, rootMargin: "0px 0px -5% 0px" });
-  els.forEach(el => io.observe(el));
-})();
+
 </script>
 </body>
 </html>
